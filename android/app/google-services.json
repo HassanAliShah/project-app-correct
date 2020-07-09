@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "521717787787",
+    "firebase_url": "https://qalam-fd064.firebaseio.com",
+    "project_id": "qalam-fd064",
+    "storage_bucket": "qalam-fd064.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:521717787787:android:1731742eb91f156a57388e",
+        "android_client_info": {
+          "package_name": "com.example.Qalam_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "521717787787-hbij0gtmff1a9l52ect9ec5t9lfcacc5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCc_SQyDyai_75dt2HrmbvKNaenPlxFIu8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "521717787787-hbij0gtmff1a9l52ect9ec5t9lfcacc5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
