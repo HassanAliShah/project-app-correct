@@ -1,3 +1,4 @@
+import 'package:Qalam_app/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:Qalam_app/SimpleWebView.dart';
 import 'package:Qalam_app/packages.dart';
@@ -12,35 +13,43 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  final AuthService _auth = AuthService();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
           title: Text('QALAM'),
+          actions: <Widget>[
+            FlatButton.icon(
+                onPressed: () async {
+                  await _auth.signOut();
+                },
+                icon: Icon(Icons.person),
+                label: Text('LogOut'))
+          ],
         ),
         body: GridView(
           padding: EdgeInsets.all(20),
           children: <Widget>[
-            Column( 
-              
-             children: <Widget>[
-
-            InkWell(
-              onTap: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (ctx) => Findteacher()));
-              },
-              child: Card(
-                elevation: 10.0,
-                child: Image.asset(
-                  'assets/images/browseteacher.jpeg',
-                  fit: BoxFit.cover,
+            Column(
+              children: <Widget>[
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (ctx) => Findteacher()));
+                  },
+                  child: Card(
+                    elevation: 10.0,
+                    child: Image.asset(
+                      'assets/images/browseteacher.jpeg',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ),
-            
-             ],),
             InkWell(
               onTap: () {
                 Navigator.of(context)
@@ -82,24 +91,23 @@ class _MainScreenState extends State<MainScreen> {
             ),
             InkWell(
               onTap: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (ctx) => SimpleWebView()));
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (ctx) => SimpleWebView()));
               },
               child: Card(
                 elevation: 10.0,
                 child: Image.asset(
                   'assets/images/becomeateacher.jpeg',
-                   fit: BoxFit.cover,
+                  fit: BoxFit.cover,
                 ),
               ),
             ),
             InkWell(
-
-              onTap: (){
-                 Navigator.of(context).push(MaterialPageRoute(builder:(ctx)=>Setting()));
-               },
+              onTap: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (ctx) => Setting()));
+              },
               child: Card(
-                
                 elevation: 10.0,
                 child: Image.asset(
                   'assets/images/profile.jpeg',
