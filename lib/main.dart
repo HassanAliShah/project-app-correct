@@ -3,7 +3,6 @@ import 'package:Qalam_app/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:Qalam_app/screens/wrapper.dart';
 import 'package:provider/provider.dart';
-import 'package:Qalam_app/models/user.dart';
 
 //import 'package:Qalam_app/findteacher.dart';
 //import 'package:Qalam_app/helpSupport.dart';
