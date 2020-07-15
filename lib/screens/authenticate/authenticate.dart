@@ -1,3 +1,4 @@
+import 'package:Qalam_app/screens/authenticate/register.dart';
 import 'package:flutter/material.dart';
 import './sign_in.dart';
 

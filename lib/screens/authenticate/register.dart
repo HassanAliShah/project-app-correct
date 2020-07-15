@@ -1,15 +1,13 @@
-import 'package:Qalam_app/services/auth.dart';
 import 'package:flutter/material.dart';
+import 'package:Qalam_app/services/auth.dart';
 
-class SignIn extends StatefulWidget {
+class Register extends StatefulWidget {
   @override
-  _SignInState createState() => _SignInState();
+  _RegisterState createState() => _RegisterState();
 }
 
-class _SignInState extends State<SignIn> {
+class _RegisterState extends State<Register> {
   final AuthService _auth = AuthService();
-
-  //textfield stealer
   String email = '';
   String password = '';
   @override
@@ -19,11 +17,11 @@ class _SignInState extends State<SignIn> {
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(141, 35, 109, 1),
         elevation: 0.0,
-        title: Text("Sign In To Qalam"),
+        title: Text("Sign Up  to Qalam"),
         actions: <Widget>[
           FlatButton.icon(
             icon: Icon(Icons.person),
-            label: Text('Register'),
+            label: Text('Sign In'),
             onPressed: () {},
           )
         ],
@@ -50,7 +48,7 @@ class _SignInState extends State<SignIn> {
               RaisedButton(
                 color: Colors.accents[200],
                 child: Text(
-                  'Sign In',
+                  'Register',
                   style: TextStyle(color: Colors.white),
                 ),
                 onPressed: () async {
