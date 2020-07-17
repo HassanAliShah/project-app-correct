@@ -1,63 +1,87 @@
-import 'package:flutter/material.dart';
 import 'package:Qalam_app/services/auth.dart';
+import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
+  final Function toggleView;
+  Register({this.toggleView});
   @override
   _RegisterState createState() => _RegisterState();
 }
 
 class _RegisterState extends State<Register> {
   final AuthService _auth = AuthService();
+  final _formkey = GlobalKey<FormState>();
+
+  // text field state
   String email = '';
   String password = '';
+  String error = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //backgroundColor: Color.fromRGBO(141, 35, 109, 1),
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(141, 35, 109, 1),
         elevation: 0.0,
-        title: Text("Sign Up  to Qalam"),
+        title: Text('Sign up to Qalam'),
         actions: <Widget>[
           FlatButton.icon(
             icon: Icon(Icons.person),
             label: Text('Sign In'),
-            onPressed: () {},
+            onPressed: () {
+              widget.toggleView();
+            },
           )
         ],
       ),
-
       body: Container(
-          padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
-          child: Form(
-              child: Column(
+        padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
+        child: Form(
+          key: _formkey,
+          child: Column(
             children: <Widget>[
               SizedBox(height: 20.0),
-              TextFormField(onChanged: (val) {
-                setState(() => email = val);
-              }),
+              TextFormField(
+                validator: (val) => val.isEmpty ? 'Enter an email' : null,
+                onChanged: (val) {
+                  setState(() => email = val);
+                },
+              ),
               SizedBox(height: 20.0),
               TextFormField(
-                  obscureText: true,
-                  onChanged: (val) {
-                    setState(() => password = val);
-                  }),
-              SizedBox(
-                height: 20.0,
-              ),
-              RaisedButton(
-                color: Colors.accents[200],
-                child: Text(
-                  'Register',
-                  style: TextStyle(color: Colors.white),
-                ),
-                onPressed: () async {
-                  print(email);
-                  print(password);
+                validator: (val) => val.isEmpty ? 'enter your password' : null,
+                obscureText: true,
+                onChanged: (val) {
+                  setState(() => password = val);
                 },
-              )
+              ),
+              SizedBox(height: 20.0),
+              RaisedButton(
+                  color: Color.fromRGBO(141, 35, 109, 1),
+                  child: Text(
+                    'Register',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onPressed: () async {
+                    if (_formkey.currentState.validate()) {
+                      dynamic result = await _auth.registerWithEmailAndPassword(
+                          email, password);
+                      if (result == null) {
+                        setState(() =>
+                            error = 'please supply a valid email and password');
+                      }
+                    }
+                  }),
+              SizedBox(height: 12.0),
+              Text(
+                error,
+                style: TextStyle(color: Colors.red, fontSize: 14.0),
+              ),
             ],
-          ))),
+          ),
+        ),
+      ),
     );
   }
 }
