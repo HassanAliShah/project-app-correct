@@ -1,4 +1,5 @@
 import 'package:Qalam_app/models/user.dart';
+import 'package:Qalam_app/services/database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthService {
@@ -34,6 +35,7 @@ class AuthService {
       AuthResult result = await _auth.signInWithEmailAndPassword(
           email: email, password: password);
       FirebaseUser user = result.user;
+
       return _userFromFirebaseUser(user);
     } catch (e) {
       print(e.toString());
@@ -47,6 +49,12 @@ class AuthService {
       AuthResult result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
       FirebaseUser user = result.user;
+
+      //create new document for the user with uid
+
+      await DatabaseService(uid: user.uid)
+          .updateUserData('raza', 2, 'KBR', 030028762);
+
       return _userFromFirebaseUser(user);
     } catch (e) {
       print(e.toString());
