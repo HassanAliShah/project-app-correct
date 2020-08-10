@@ -40,8 +40,8 @@ class _SettingState extends State<Setting> {
         new TextFormField(
           decoration: const InputDecoration(labelText: 'Name'),
           keyboardType: TextInputType.text,
-          onSaved:(String arg){
-            _name=arg;
+          onSaved: (String arg) {
+            _name = arg;
           },
           validator: (String arg) {
             if (arg.length < 3)
@@ -49,7 +49,6 @@ class _SettingState extends State<Setting> {
             else
               return null;
           },
-          
         ),
         new TextFormField(
           decoration: const InputDecoration(labelText: 'Mobile'),
@@ -76,8 +75,8 @@ class _SettingState extends State<Setting> {
             else
               return null;
           },
-          onSaved: (String val){
-            _email=val;
+          onSaved: (String val) {
+            _email = val;
           },
         ),
         new SizedBox(
@@ -102,5 +101,4 @@ class _SettingState extends State<Setting> {
       });
     }
   }
-
 }
