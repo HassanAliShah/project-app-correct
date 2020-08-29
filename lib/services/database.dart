@@ -15,4 +15,8 @@ class DatabaseService {
       'phoneno': phoneno,
     });
   }
+
+  Stream<QuerySnapshot> get qalams {
+    return qalamCollection.snapshots();
+  }
 }
