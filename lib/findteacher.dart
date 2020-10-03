@@ -1,53 +1,83 @@
 import 'package:flutter/material.dart';
+import 'class8_teacher.dart';
+import 'class9_teacher.dart';
+import 'class10_teacher.dart';
+import 'class11_teacher.dart';
+import 'class12_teacher.dart';
 
 class Findteacher extends StatefulWidget {
   @override
   _FindteacherState createState() => _FindteacherState();
 }
 
-
 class _FindteacherState extends State<Findteacher> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('qalam')),
-        body:  getlistview(),
-        );
+        appBar: AppBar(centerTitle: true, title: Text('Booking')),
+        body: ListView(
+          children: <Widget>[
+            ListTile(
+              leading: Icon(Icons.library_books),
+              title: Text("Class 8"),
+              subtitle: Text("According to Sindh syllabus"),
+              //trailing: Icon(Icons.add),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Class8_teacher()),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.library_books),
+              title: Text("Class 9"),
+              subtitle: Text("According To Matric Board"),
+              //trailing: Icon(Icons.add),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Class9_teacher()),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.library_books),
+              title: Text("class 10"),
+              subtitle: Text("According To Matric Board"),
+              // trailing: Icon(Icons.add),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Class10_teacher()),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.library_books),
+              title: Text("Class 11"),
+              subtitle: Text("According To Intermediate"),
+              //trailing: Icon(Icons.add),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Class11_teacher()),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.library_books),
+              title: Text("Class 12"),
+              subtitle: Text("According To Intermidiate"),
+              //trailing: Icon(Icons.add),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Class12_teacher()),
+                );
+              },
+            ),
+          ],
+        ));
   }
-}
-Widget getlistview() {
-  var listview = ListView(
-    children: <Widget>[
-      ListTile(
-        leading: Icon(Icons.person),
-        title: Text("Sir Usman"),
-        subtitle: Text("classes : 9-12"),
-        trailing: Icon(Icons.add),
-        onTap: (){
-          debugPrint("tap checked");
-        },
-      ),
-      ListTile(
-        leading: Icon(Icons.person),
-        title: Text("Sir hussan salim"),
-        subtitle: Text("subject :  "),
-        trailing: Icon(Icons.add),
-        onTap: (){
-          debugPrint("tap checked");
-        },
-      ),
-      ListTile(
-        leading: Icon(Icons.person),
-        title: Text("Sir sadiq"),
-        subtitle: Text("lumber 1 teacher"),
-        trailing: Icon(Icons.add),
-        onTap: (){
-          debugPrint("tap checked");
-        },
-      ),
-      
-    ],
-      
-  );
-  return listview;
 }

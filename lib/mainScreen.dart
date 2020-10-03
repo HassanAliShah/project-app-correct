@@ -5,7 +5,7 @@ import 'package:Qalam_app/packages.dart';
 import './contact.dart';
 import './findteacher.dart';
 import './helpSupport.dart';
-import './setting.dart';
+import 'UserProfile.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -105,7 +105,7 @@ class _MainScreenState extends State<MainScreen> {
             InkWell(
               onTap: () {
                 Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (ctx) => Setting()));
+                    .push(MaterialPageRoute(builder: (ctx) => UserProfile()));
               },
               child: Card(
                 elevation: 10.0,

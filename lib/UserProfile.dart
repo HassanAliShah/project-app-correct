@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class Setting extends StatefulWidget {
-  Setting({Key key}) : super(key: key);
+class UserProfile extends StatefulWidget {
+  UserProfile({Key key}) : super(key: key);
   @override
-  _SettingState createState() => _SettingState();
+  _UserProfile createState() => _UserProfile();
 }
 
-class _SettingState extends State<Setting> {
+class _UserProfile extends State<UserProfile> {
   //  _formKey and _autoValidate
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   bool _autoValidate = false;
@@ -17,7 +17,7 @@ class _SettingState extends State<Setting> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text('Form Validation'),
+        title: new Text('Profile'),
       ),
       body: new SingleChildScrollView(
         child: new Container(
