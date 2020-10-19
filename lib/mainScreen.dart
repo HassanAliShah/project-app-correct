@@ -30,97 +30,99 @@ class _MainScreenState extends State<MainScreen> {
                 label: Text('LogOut'))
           ],
         ),
-        body: GridView(
-          padding: EdgeInsets.all(20),
-          children: <Widget>[
-            Column(
-              children: <Widget>[
-                InkWell(
-                  onTap: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (ctx) => Findteacher()));
-                  },
-                  child: Card(
-                    elevation: 10.0,
-                    child: Image.asset(
-                      'assets/images/browseteacher.jpeg',
-                      fit: BoxFit.cover,
+        body: Container(
+          padding: EdgeInsets.all(40),
+          child: GridView(
+            children: <Widget>[
+              Column(
+                children: <Widget>[
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (ctx) => Findteacher()));
+                    },
+                    child: Card(
+                      elevation: 10.0,
+                      child: Image.asset(
+                        'assets/images/findteacher.jpeg',
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (ctx) => Contact()));
-              },
-              child: Card(
-                elevation: 10.0,
-                child: Image.asset(
-                  'assets/images/messages.jpeg',
-                  fit: BoxFit.cover,
+                ],
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (ctx) => Contact()));
+                },
+                child: Card(
+                  elevation: 10.0,
+                  child: Image.asset(
+                    'assets/images/orders.jpeg',
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (ctx) => HelpSupport()));
-              },
-              child: Card(
-                elevation: 10.0,
-                child: Image.asset(
-                  'assets/images/hel&support.jpeg',
-                  fit: BoxFit.cover,
+              InkWell(
+                onTap: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (ctx) => HelpSupport()));
+                },
+                child: Card(
+                  elevation: 10.0,
+                  child: Image.asset(
+                    'assets/images/help.jpeg',
+                    fit: BoxFit.scaleDown,
+                  ),
                 ),
               ),
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (ctx) => Packages()));
-              },
-              child: Card(
-                elevation: 10.0,
-                child: Image.asset(
-                  'assets/images/packages.jpeg',
-                  fit: BoxFit.cover,
+              InkWell(
+                onTap: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (ctx) => Packages()));
+                },
+                child: Card(
+                  elevation: 10.0,
+                  child: Image.asset(
+                    'assets/images/packages.jpeg',
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (ctx) => SimpleWebView()));
-              },
-              child: Card(
-                elevation: 10.0,
-                child: Image.asset(
-                  'assets/images/becomeateacher.jpeg',
-                  fit: BoxFit.cover,
+              InkWell(
+                onTap: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (ctx) => SimpleWebView()));
+                },
+                child: Card(
+                  elevation: 10.0,
+                  child: Image.asset(
+                    'assets/images/register.jpeg',
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (ctx) => UserProfile()));
-              },
-              child: Card(
-                elevation: 10.0,
-                child: Image.asset(
-                  'assets/images/profile.jpeg',
-                  fit: BoxFit.cover,
+              InkWell(
+                onTap: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (ctx) => XDSettings()));
+                },
+                child: Card(
+                  elevation: 10.0,
+                  child: Image.asset(
+                    'assets/images/settings.jpeg',
+                    fit: BoxFit.cover,
+                  ),
                 ),
-              ),
-            )
-          ].toList(),
-          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-              maxCrossAxisExtent: 200,
-              mainAxisSpacing: 40,
-              crossAxisSpacing: 20,
-              childAspectRatio: 2 / 2),
+              )
+            ].toList(),
+            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: 200,
+                mainAxisSpacing: 40,
+                crossAxisSpacing: 20,
+                childAspectRatio: 2 / 2),
+          ),
         ));
   }
 }
