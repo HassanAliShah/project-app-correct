@@ -19,8 +19,13 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          elevation: 0.0,
+          backgroundColor: Colors.white,
           centerTitle: true,
-          title: Text('QALAM'),
+          title: Text(
+            'QALAM',
+            style: TextStyle(color: Colors.deepPurple),
+          ),
           actions: <Widget>[
             FlatButton.icon(
                 onPressed: () async {
