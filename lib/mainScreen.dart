@@ -1,11 +1,10 @@
+import 'package:Qalam_app/Notes.dart';
+import 'package:Qalam_app/User_profile.dart';
 import 'package:Qalam_app/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:Qalam_app/SimpleWebView.dart';
-import 'package:Qalam_app/packages.dart';
-import './contact.dart';
 import './findteacher.dart';
 import './helpSupport.dart';
-import 'UserProfile.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -59,7 +58,7 @@ class _MainScreenState extends State<MainScreen> {
               InkWell(
                 onTap: () {
                   Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (ctx) => Contact()));
+                      .push(MaterialPageRoute(builder: (ctx) => Notes()));
                 },
                 child: Card(
                   elevation: 10.0,
@@ -84,13 +83,13 @@ class _MainScreenState extends State<MainScreen> {
               ),
               InkWell(
                 onTap: () {
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (ctx) => Packages()));
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (ctx) => User_profile()));
                 },
                 child: Card(
                   elevation: 10.0,
                   child: Image.asset(
-                    'assets/images/packages.jpeg',
+                    'assets/images/settings.jpeg',
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -108,19 +107,6 @@ class _MainScreenState extends State<MainScreen> {
                   ),
                 ),
               ),
-              InkWell(
-                onTap: () {
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (ctx) => XDSettings()));
-                },
-                child: Card(
-                  elevation: 10.0,
-                  child: Image.asset(
-                    'assets/images/settings.jpeg',
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              )
             ].toList(),
             gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                 maxCrossAxisExtent: 200,

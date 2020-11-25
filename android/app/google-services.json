@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "434633845834",
-    "firebase_url": "https://qalam-ad74e.firebaseio.com",
-    "project_id": "qalam-ad74e",
-    "storage_bucket": "qalam-ad74e.appspot.com"
+    "project_number": "857048382632",
+    "firebase_url": "https://qalam-f1dc0.firebaseio.com",
+    "project_id": "qalam-f1dc0",
+    "storage_bucket": "qalam-f1dc0.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:434633845834:android:b4583f927d5241b16a4ab3",
+        "mobilesdk_app_id": "1:857048382632:android:6594b9913a72f3c812169d",
         "android_client_info": {
           "package_name": "com.example.Qalam_app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "434633845834-519ovdhkrhce1ta3h8r0977c36ts385r.apps.googleusercontent.com",
+          "client_id": "857048382632-40bb578ccuvn3ibp9383d1vc91sid2vf.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBMrZ7qIe2L7VTh5PZhdLBXcT5ElWAHn_g"
+          "current_key": "AIzaSyCum9WHwP57FPqGAweFS0k_J2akqyBwg8E"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "434633845834-519ovdhkrhce1ta3h8r0977c36ts385r.apps.googleusercontent.com",
+              "client_id": "857048382632-40bb578ccuvn3ibp9383d1vc91sid2vf.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

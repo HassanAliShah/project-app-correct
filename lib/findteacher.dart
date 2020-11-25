@@ -1,6 +1,7 @@
 import 'package:Qalam_app/mainScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Findteacher extends StatefulWidget {
   @override
@@ -8,6 +9,69 @@ class Findteacher extends StatefulWidget {
 }
 
 class _FindteacherState extends State<Findteacher> {
+  _launchUrl() async {
+    const Tel = 'tel:+03128675523';
+    if (await canLaunch(Tel)) {
+      await launch(Tel);
+    } else {
+      throw 'Could Not Call';
+    }
+  }
+
+  _launchUrl1() async {
+    const Tel = 'tel:03120299364';
+    if (await canLaunch(Tel)) {
+      await launch(Tel);
+    } else {
+      throw 'Could Not Call';
+    }
+  }
+
+  _launchUr2() async {
+    const Tel = 'tel:03002859842';
+    if (await canLaunch(Tel)) {
+      await launch(Tel);
+    } else {
+      throw 'Could Not Call';
+    }
+  }
+
+  _launchUr3() async {
+    const Tel = 'tel:+031283332133';
+    if (await canLaunch(Tel)) {
+      await launch(Tel);
+    } else {
+      throw 'Could Not Call';
+    }
+  }
+
+  _launchUr4() async {
+    const Tel = 'tel:+03128675523';
+    if (await canLaunch(Tel)) {
+      await launch(Tel);
+    } else {
+      throw 'Could Not Call';
+    }
+  }
+
+  _launchUr5() async {
+    const Tel = 'tel:+03128675523';
+    if (await canLaunch(Tel)) {
+      await launch(Tel);
+    } else {
+      throw 'Could Not Call';
+    }
+  }
+
+  _launchUr6() async {
+    const Tel = 'tel:+03128675523';
+    if (await canLaunch(Tel)) {
+      await launch(Tel);
+    } else {
+      throw 'Could Not Call';
+    }
+  }
+
   int _currentIndex = 0;
   final tabs = [
     Center(
@@ -18,7 +82,7 @@ class _FindteacherState extends State<Findteacher> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0.0,
+        elevation: 18.0,
         backgroundColor: Colors.white,
         centerTitle: true,
         title: Text(
@@ -38,7 +102,8 @@ class _FindteacherState extends State<Findteacher> {
                     children: [
                       CircleAvatar(
                         radius: 30.0,
-                        backgroundColor: Colors.green,
+                        backgroundImage:
+                            AssetImage('assets/images/teacher1.jpeg'),
                       ),
                       SizedBox(width: 10),
                       Column(
@@ -60,16 +125,23 @@ class _FindteacherState extends State<Findteacher> {
                       ),
                       Spacer(),
                       Icon(Icons.location_on),
-                      Text('KBR'),
+                      Text('Karachi'),
                     ],
                   ),
                   SizedBox(height: 10),
                   Text(
-                    "Hard Working Teacher but sometimes get angry",
+                    "Subjects: English,Physics,Maths",
                   ),
+                  SizedBox(height: 20),
                   RaisedButton(
-                    child: Text('Call'),
-                    color: Colors.black,
+                    onPressed: () {
+                      _launchUrl();
+                    },
+                    child: Text(
+                      'Call',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    color: Colors.deepPurple,
                   )
                 ],
               ),
@@ -85,7 +157,8 @@ class _FindteacherState extends State<Findteacher> {
                     children: [
                       CircleAvatar(
                         radius: 30.0,
-                        backgroundColor: Colors.green,
+                        backgroundImage:
+                            AssetImage('assets/images/teacher1.jpeg'),
                       ),
                       SizedBox(width: 10),
                       Column(
@@ -98,25 +171,32 @@ class _FindteacherState extends State<Findteacher> {
                           SizedBox(
                             height: 5,
                           ),
-                          Text('Timing 0'),
+                          Text('Timing 2-5 PM'),
                           SizedBox(
                             height: 5,
                           ),
-                          Text('Class montessori'),
+                          Text('Class : 11-12'),
                         ],
                       ),
                       Spacer(),
                       Icon(Icons.location_on),
-                      Text('Namalum'),
+                      Text('Karachi'),
                     ],
                   ),
                   SizedBox(height: 10),
                   Text(
-                    "Good guy but topi person ",
+                    "Education is not the filling of a pot but the lighting of a fire ",
                   ),
+                  SizedBox(height: 20),
                   RaisedButton(
-                    child: Text('Call'),
-                    color: Colors.black,
+                    onPressed: () {
+                      _launchUrl1();
+                    },
+                    child: Text(
+                      'Call',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    color: Colors.deepPurple,
                   )
                 ],
               ),
@@ -132,7 +212,8 @@ class _FindteacherState extends State<Findteacher> {
                     children: [
                       CircleAvatar(
                         radius: 30.0,
-                        backgroundColor: Colors.green,
+                        backgroundImage:
+                            AssetImage('assets/images/teacher1.jpeg'),
                       ),
                       SizedBox(width: 10),
                       Column(
@@ -145,11 +226,11 @@ class _FindteacherState extends State<Findteacher> {
                           SizedBox(
                             height: 5,
                           ),
-                          Text('Timing : Always free'),
+                          Text('Timing : 12-5 PM'),
                           SizedBox(
                             height: 5,
                           ),
-                          Text('Class 9-12')
+                          Text('Class:10-12'),
                         ],
                       ),
                       Spacer(),
@@ -161,9 +242,16 @@ class _FindteacherState extends State<Findteacher> {
                   Text(
                     "Hard Working Teacher but sometimes get angry",
                   ),
+                  SizedBox(height: 20),
                   RaisedButton(
-                    child: Text('Call'),
-                    color: Colors.black,
+                    onPressed: () {
+                      _launchUr2();
+                    },
+                    child: Text(
+                      'Call',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    color: Colors.deepPurple,
                   )
                 ],
               ),
@@ -179,7 +267,8 @@ class _FindteacherState extends State<Findteacher> {
                     children: [
                       CircleAvatar(
                         radius: 30.0,
-                        backgroundColor: Colors.green,
+                        backgroundImage:
+                            AssetImage('assets/images/teacher1.jpeg'),
                       ),
                       SizedBox(width: 10),
                       Column(
@@ -208,9 +297,16 @@ class _FindteacherState extends State<Findteacher> {
                   Text(
                     "Hard Working Teacher but sometimes get angry",
                   ),
+                  SizedBox(height: 20),
                   RaisedButton(
-                    child: Text('Call'),
-                    color: Colors.black,
+                    onPressed: () {
+                      _launchUr3();
+                    },
+                    child: Text(
+                      'Call',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    color: Colors.deepPurple,
                   )
                 ],
               ),
@@ -226,7 +322,8 @@ class _FindteacherState extends State<Findteacher> {
                     children: [
                       CircleAvatar(
                         radius: 30.0,
-                        backgroundColor: Colors.green,
+                        backgroundImage:
+                            AssetImage('assets/images/teacher1.jpeg'),
                       ),
                       SizedBox(width: 10),
                       Column(
@@ -255,9 +352,18 @@ class _FindteacherState extends State<Findteacher> {
                   Text(
                     "Hard Working Teacher but sometimes get angry",
                   ),
+                  SizedBox(
+                    height: 20,
+                  ),
                   RaisedButton(
-                    child: Text('Call'),
-                    color: Colors.black,
+                    onPressed: () {
+                      _launchUr4();
+                    },
+                    child: Text(
+                      'Call',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    color: Colors.deepPurple,
                   )
                 ],
               ),
@@ -273,7 +379,8 @@ class _FindteacherState extends State<Findteacher> {
                     children: [
                       CircleAvatar(
                         radius: 30.0,
-                        backgroundColor: Colors.green,
+                        backgroundImage:
+                            AssetImage('assets/images/teacher1.jpeg'),
                       ),
                       SizedBox(width: 10),
                       Column(
@@ -286,7 +393,7 @@ class _FindteacherState extends State<Findteacher> {
                           SizedBox(
                             height: 5,
                           ),
-                          Text('Timing 6-9 PM'),
+                          Text('Timing: 6-9 PM'),
                           SizedBox(
                             height: 5,
                           ),
@@ -302,10 +409,18 @@ class _FindteacherState extends State<Findteacher> {
                   Text(
                     "Hard Working Teacher but sometimes get angry",
                   ),
+                  SizedBox(
+                    height: 20,
+                  ),
                   RaisedButton(
-                    onPressed: () {},
-                    child: Text('Call'),
-                    color: Colors.black,
+                    onPressed: () {
+                      _launchUr6();
+                    },
+                    child: Text(
+                      'Call',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    color: Colors.deepPurple,
                   )
                 ],
               ),

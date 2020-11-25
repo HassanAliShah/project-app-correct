@@ -12,30 +12,15 @@ void main() => runApp(MyApp());
 
 // ignore: must_be_immutable
 class MyApp extends StatelessWidget {
-  Map<int, Color> color = {
-    50: Color.fromRGBO(141, 35, 109, 1),
-    100: Color.fromRGBO(141, 35, 109, 1),
-    200: Color.fromRGBO(141, 35, 109, 1),
-    300: Color.fromRGBO(141, 35, 109, 1),
-    400: Color.fromRGBO(141, 35, 109, 1),
-    500: Color.fromRGBO(141, 35, 109, 1),
-    600: Color.fromRGBO(141, 35, 109, 1),
-    700: Color.fromRGBO(141, 35, 109, 1),
-    800: Color.fromRGBO(141, 35, 109, 1),
-    900: Color.fromRGBO(141, 35, 109, 1),
-  };
-
   @override
   Widget build(BuildContext context) {
-    MaterialColor colorCustom = MaterialColor(0xFF880E4F, color);
-
     return StreamProvider<User>.value(
       value: AuthService().user,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Qalam',
         theme: ThemeData(
-          primarySwatch: colorCustom,
+          primarySwatch: Colors.deepPurple,
           accentColor: Colors.amber,
           canvasColor: Colors.white,
           fontFamily: 'Raleway',
