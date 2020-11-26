@@ -27,7 +27,7 @@ class _SignInState extends State<SignIn> {
         : Scaffold(
             backgroundColor: Colors.white,
             appBar: AppBar(
-              backgroundColor: Color.fromRGBO(141, 35, 109, 1),
+              backgroundColor: Colors.deepPurple,
               elevation: 0.0,
               title: Text('Qalam'),
               centerTitle: true,
@@ -69,7 +69,7 @@ class _SignInState extends State<SignIn> {
                     ),
                     SizedBox(height: 20.0),
                     RaisedButton(
-                        color: Color.fromRGBO(141, 35, 109, 1),
+                        color: Colors.deepPurple,
                         child: Text(
                           'Sign In',
                           style: TextStyle(color: Colors.white),

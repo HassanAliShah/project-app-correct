@@ -10,6 +10,7 @@ class _User_profileState extends State<User_profile> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        resizeToAvoidBottomPadding: false,
         appBar: AppBar(
           elevation: 18.0,
           centerTitle: true,
@@ -19,33 +20,69 @@ class _User_profileState extends State<User_profile> {
             style: TextStyle(color: Colors.deepPurple),
           ),
         ),
-        body: SafeArea(
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                CircleAvatar(
-                  radius: 70.0,
+        body: Container(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              CircleAvatar(
+                backgroundImage: AssetImage('assets/images/teacher1.jpeg'),
+                radius: 60.0,
+              ),
+              SizedBox(
+                height: 3,
+              ),
+              Text(
+                'Rating: 4.5',
+                style: TextStyle(
+                    color: Colors.deepPurple, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              TextFormField(
+                decoration: InputDecoration(
+                  labelText: 'Name',
                 ),
-                SizedBox(
-                  height: 90,
+              ),
+              SizedBox(
+                height: 3,
+              ),
+              TextFormField(
+                decoration: InputDecoration(labelText: 'Email'),
+              ),
+              SizedBox(
+                height: 3,
+              ),
+              TextFormField(
+                decoration: InputDecoration(labelText: 'Password'),
+              ),
+              SizedBox(
+                height: 3,
+              ),
+              TextFormField(
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                    color: Colors.deepPurple,
+                  )),
+                  labelText: 'Home Address',
                 ),
-                TextField(),
-                SizedBox(
-                  height: 3,
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              RaisedButton(
+                onPressed: () {},
+                color: Colors.deepPurple,
+                child: Text(
+                  'Update',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
                 ),
-                TextField(),
-                SizedBox(
-                  height: 3,
-                ),
-                TextField(),
-                SizedBox(
-                  height: 3,
-                ),
-                TextField(),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

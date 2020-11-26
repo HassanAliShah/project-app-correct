@@ -27,7 +27,7 @@ class _RegisterState extends State<Register> {
         : Scaffold(
             backgroundColor: Colors.white,
             appBar: AppBar(
-              backgroundColor: Color.fromRGBO(141, 35, 109, 1),
+              backgroundColor: Colors.deepPurple,
               elevation: 0.0,
               centerTitle: true,
               title: Text(' Qalam'),
@@ -69,7 +69,7 @@ class _RegisterState extends State<Register> {
                     ),
                     SizedBox(height: 20.0),
                     RaisedButton(
-                        color: Color.fromRGBO(141, 35, 109, 1),
+                        color: Colors.deepPurple,
                         child: Text(
                           'Register',
                           style: TextStyle(color: Colors.white),
