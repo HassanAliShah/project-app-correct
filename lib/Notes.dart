@@ -1,3 +1,7 @@
+import 'package:Qalam_app/class_10th.dart';
+import 'package:Qalam_app/class_11th.dart';
+import 'package:Qalam_app/class_12th.dart';
+import 'package:Qalam_app/class_9th.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_plugin_pdf_viewer/flutter_plugin_pdf_viewer.dart';
 
@@ -6,95 +10,64 @@ class Notes extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Notes',
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
-      home: MyHomepage(),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Notes'),
+          backgroundColor: Colors.deepPurple,
+          centerTitle: true,
+        ),
+        body: PdfViewer(),
+      ),
     );
   }
 }
 
-class MyHomepage extends StatefulWidget {
-  MyHomepage({Key key, this.title}) : super(key: key);
-  final String title;
+class PdfViewer extends StatefulWidget {
   @override
-  _MyHomepageState createState() => _MyHomepageState();
+  _PdfViewerState createState() => _PdfViewerState();
 }
 
-class _MyHomepageState extends State<MyHomepage> {
-  bool _isLoading = true;
-  PDFDocument doc;
-
-  void _loadFromAssets() async {
-    setState(() {
-      _isLoading = true;
-    });
-    doc = await PDFDocument.fromAsset('assets/new.pdf');
-    setState(() {
-      _isLoading = false;
-    });
-  }
-
-  void _loadFromUrl() async {
-    setState(() {
-      _isLoading = true;
-    });
-    doc = await PDFDocument.fromURL(
-        'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf');
-    setState(() {
-      _isLoading = false;
-    });
-  }
-
+class _PdfViewerState extends State<PdfViewer> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Flexible(
-              flex: 8,
-              child: _isLoading
-                  ? CircularProgressIndicator()
-                  : PDFViewer(
-                      document: doc,
-                    ),
-            ),
-            Flexible(
-              flex: 2,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    RaisedButton(
-                      color: Colors.blue,
-                      child: Text(
-                        'Load From Assets',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      onPressed: _loadFromAssets,
-                    ),
-                    RaisedButton(
-                      color: Colors.blue,
-                      child: Text(
-                        'Load From URL',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      onPressed: _loadFromUrl,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
+    return Column(
+      children: <Widget>[
+        ListTile(
+          onTap: () {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (ctx) => Class_9th()));
+          },
+          leading: Icon(Icons.school),
+          title: Text('Notes forClass 9th'),
         ),
-      ),
+        ListTile(
+          onTap: () {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (ctx) => Class_10th()));
+          },
+          leading: Icon(Icons.school),
+          title: Text('Notes forClass 10th'),
+        ),
+        ListTile(
+          onTap: () {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (ctx) => Class_11th()));
+          },
+          leading: Icon(Icons.school),
+          title: Text('Notes forClass 11th'),
+        ),
+        ListTile(
+          onTap: () {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (ctx) => Class_12th()));
+          },
+          leading: Icon(Icons.school),
+          title: Text('Notes forClass 12th'),
+        ),
+      ],
     );
   }
 }

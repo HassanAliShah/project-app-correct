@@ -92,7 +92,13 @@ class _FindteacherState extends State<Findteacher> {
       ),
       body: ListView(
         children: [
+          SizedBox(
+            height: 15,
+          ),
           Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15.0),
+            ),
             elevation: 13.0,
             child: Container(
               padding: EdgeInsets.all(15),
@@ -148,9 +154,12 @@ class _FindteacherState extends State<Findteacher> {
             ),
           ),
           Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15),
+            ),
             elevation: 13.0,
             child: Container(
-              padding: EdgeInsets.all(15),
+              padding: EdgeInsets.all(15.0),
               child: Column(
                 children: [
                   Row(
@@ -203,6 +212,9 @@ class _FindteacherState extends State<Findteacher> {
             ),
           ),
           Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15.0),
+            ),
             elevation: 13.0,
             child: Container(
               padding: EdgeInsets.all(15),
@@ -258,6 +270,9 @@ class _FindteacherState extends State<Findteacher> {
             ),
           ),
           Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15.0),
+            ),
             elevation: 13.0,
             child: Container(
               padding: EdgeInsets.all(15),
@@ -313,6 +328,8 @@ class _FindteacherState extends State<Findteacher> {
             ),
           ),
           Card(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15.0)),
             elevation: 13.0,
             child: Container(
               padding: EdgeInsets.all(15),
@@ -370,6 +387,8 @@ class _FindteacherState extends State<Findteacher> {
             ),
           ),
           Card(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25.0)),
             elevation: 13.0,
             child: Container(
               padding: EdgeInsets.all(15),
