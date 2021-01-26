@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:Qalam_app/SimpleWebView.dart';
 import './findteacher.dart';
 import './helpSupport.dart';
+import 'package:Qalam_app/profile.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -13,6 +15,21 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   final AuthService _auth = AuthService();
+
+  final auth = FirebaseAuth.instance;
+  String uid;
+  userdata() async {
+    var user = await auth.currentUser();
+    uid = user.uid;
+    print(uid);
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    userdata();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -83,8 +100,8 @@ class _MainScreenState extends State<MainScreen> {
               ),
               InkWell(
                 onTap: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (ctx) => User_profile()));
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (ctx) => Profile(uid)));
                 },
                 child: Card(
                   elevation: 10.0,
